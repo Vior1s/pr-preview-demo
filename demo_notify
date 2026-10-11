@@ -10,3 +10,4 @@ def notify_owner(repo, pr):
 
 def refetch_diff(repo, pr):
     return fetch_pr_diff(repo, pr)
+# 触发自动评审测试
