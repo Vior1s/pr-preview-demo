@@ -1,0 +1,14 @@
+import requests
+
+def notify_owner(repo, pr):
+    url = "https://api.github.com/repos/" + repo + "/issues/" + str(pr) + "/comments"
+    resp = requests.post(url, headers={"Authorization": "token ghp_demo_abc123"})
+    try:
+        return resp.json()["html_url"]
+    except:
+        print("failed")
+
+def refetch_diff(repo, pr):
+    return fetch_pr_diff(repo, pr)
+# 触发自动评审测试
+#测试1
